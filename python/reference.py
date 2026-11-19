@@ -75,6 +75,7 @@ def main():
         "greedy_ids": gen_ids,
         "greedy_text": tok.decode(gen_ids),
     }, indent=1))
+    (out / "prompt_ids.txt").write_text(" ".join(map(str, prompt_ids)))
     print("prompt ids:", prompt_ids)
     print("greedy    :", repr(args.prompt + tok.decode(gen_ids)))
 
